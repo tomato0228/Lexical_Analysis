@@ -18,6 +18,9 @@ public class Main {
             if (nfa.inputNfa(address) == -1){
                 System.out.println(ErrorMessage.CREATNFA);
             }
+            if (nfa.nfaToDfa() == -1){
+                System.out.println(ErrorMessage.CREATNFA);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
