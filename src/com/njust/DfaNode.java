@@ -55,12 +55,12 @@ public class DfaNode {
         return name;
     }
 
-    public void setName(List<String> name) {
-        this.name = name;
-    }
-
     public void setName(String name) {
         this.name.add(name);
+    }
+
+    public void setName(List<String> name) {
+        this.name = name;
     }
 
     public String getW() {
@@ -75,12 +75,12 @@ public class DfaNode {
         return next;
     }
 
-    public void setNext(List<String> next) {
-        this.next = next;
-    }
-
     public void setNext(String next) {
         this.next.add(next);
+    }
+
+    public void setNext(List<String> next) {
+        this.next = next;
     }
 
     public boolean isFinalState() {

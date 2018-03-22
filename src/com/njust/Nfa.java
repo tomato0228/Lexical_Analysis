@@ -47,6 +47,12 @@ public class Nfa {
         return 1;
     }
 
+    /**
+     * 从文件读入正规文法转为NFA
+     *
+     * @param address 正规文法文件的地址
+     * @throws Exception 文件操作异常
+     */
     private void fileRead(String address) throws Exception {
         //定义一个file对象，用来初始化FileReader
         File file = new File(address);
@@ -119,6 +125,11 @@ public class Nfa {
 */
     }
 
+    /**
+     * NFA确定化为DFA
+     *
+     * @return 是否确定化完成
+     */
     public int nfaToDfa() {
         String move = nfaNodes.get(0).getName();
         int i = 0, j = 0, k = 0, p = 0, q = 0, r = 0;
@@ -187,6 +198,11 @@ public class Nfa {
         return 0;
     }
 
+    /**
+     * ε——closures是否已经存在
+     *
+     * @return 是否存在
+     */
     private int haveFalseT() {
         for (int i = 0; i < closures.size(); i++) {
             if (!closures.get(i).isFlag()) {
@@ -196,6 +212,11 @@ public class Nfa {
         return -1;
     }
 
+    /**
+     * DFA结点不存在，加入新结点，A->aX，A->a不一样就加入
+     *
+     * @param set 加入的结点集T
+     */
     private void addDfaNode(List<String> set) {
         int i = 0;
         for (i = 0; i < dfaNodes.size(); i++) {
@@ -210,6 +231,13 @@ public class Nfa {
         }
     }
 
+    /**
+     * NFA->DFA，加入DFA结点，确定A->aX中的X，保存DFA结点
+     *
+     * @param set  加入的A
+     * @param w    加入的a
+     * @param next 加入的X
+     */
     private void addDfa(List<String> set, String w, List<String> next) {
         int i = 0, j = 0, k = 0;
         for (i = 0; i < dfaNodes.size(); i++) {

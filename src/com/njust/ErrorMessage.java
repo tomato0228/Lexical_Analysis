@@ -6,4 +6,5 @@ package com.njust;
  */
 public class ErrorMessage {
     public static final String CREATNFA = "创建DFA错误";
+    public static final String NFATODFA = "NFA确定化错误";
 }

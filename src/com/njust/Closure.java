@@ -10,8 +10,17 @@ import java.util.List;
  * @create 2018-03-21 下午10:28
  */
 public class Closure {
+    /**
+     * ε——closures左边
+     */
     private List<String> set;
+    /**
+     * ε——closures右边
+     */
     private List<String> node;
+    /**
+     * 是否计算过
+     */
     private boolean flag;
 
     Closure() {
@@ -24,24 +33,24 @@ public class Closure {
         return set;
     }
 
-    public void setSet(List<String> set) {
-        this.set = set;
-    }
-
     public void setSet(String set) {
         this.set.add(set);
+    }
+
+    public void setSet(List<String> set) {
+        this.set = set;
     }
 
     public List<String> getNode() {
         return node;
     }
 
-    public void setNode(String node) {
-        this.node.add(node);
-    }
-
     public void setNode(List<String> node) {
         this.node = node;
+    }
+
+    public void setNode(String node) {
+        this.node.add(node);
     }
 
     public boolean isFlag() {
@@ -52,6 +61,11 @@ public class Closure {
         this.flag = flag;
     }
 
+    /**
+     * 计算ε——closures
+     *
+     * @param nfaNodes 需要计算的nfa所有结点
+     */
     public void calculateClosure(List<NfaNode> nfaNodes) {
         int i = 0, j = 0, k = 0;
         for (k = 0; k < node.size(); k++) {

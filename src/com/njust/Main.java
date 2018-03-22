@@ -19,7 +19,7 @@ public class Main {
                 System.out.println(ErrorMessage.CREATNFA);
             }
             if (nfa.nfaToDfa() == -1){
-                System.out.println(ErrorMessage.CREATNFA);
+                System.out.println(ErrorMessage.NFATODFA);
             }
         } catch (Exception e) {
             e.printStackTrace();
